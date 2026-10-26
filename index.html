@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Credit Score Prediction and Credit Risk Assessment demo project." />
+  <title>CreditLens | Credit Risk Assessment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span><span>CreditLens<small>Credit risk assessment</small></span></a>
+    <span class="demo-badge">STUDENT DEMO</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SMARTER FINANCIAL INSIGHTS</p>
+        <h1>Credit Score Prediction<br /><span>&amp; Risk Assessment</span></h1>
+        <p class="hero-copy">Explore how financial indicators can be used to estimate a credit category and lending risk. Enter sample details to generate a demo assessment.</p>
+      </div>
+      <div class="hero-icon" aria-hidden="true"><div class="shield">✓</div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div>
+    </section>
+
+    <section class="notice"><strong>Educational demo:</strong> This website uses a transparent, rule-based illustrative calculation—not a trained ML model, official credit score, or lending recommendation. Do not enter real personal or financial information.</section>
+
+    <div class="layout">
+      <section class="panel form-panel">
+        <div class="panel-heading"><div><p class="eyebrow">CUSTOMER PROFILE</p><h2>Financial details</h2></div><span class="step">01 / 02</span></div>
+        <form id="assessment-form">
+          <div class="field-grid">
+            <label>Annual income (₹)
+              <input id="income" type="number" min="0" max="100000000" value="600000" required />
+            </label>
+            <label>Outstanding debt (₹)
+              <input id="debt" type="number" min="0" max="100000000" value="80000" required />
+            </label>
+            <label>Loan amount requested (₹)
+              <input id="loan" type="number" min="0" max="100000000" value="200000" required />
+            </label>
+            <label>Credit history
+              <select id="history" required>
+                <option value="0">Less than 1 year</option>
+                <option value="2">1–3 years</option>
+                <option value="5" selected>4–7 years</option>
+                <option value="8">More than 7 years</option>
+              </select>
+            </label>
+            <label>Missed payments (past 12 months)
+              <select id="missed" required>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 or more</option>
+              </select>
+            </label>
+            <label>Employment status
+              <select id="employment" required>
+                <option value="stable" selected>Stable employment</option>
+                <option value="self">Self-employed</option>
+                <option value="unstable">Irregular / currently not employed</option>
+              </select>
+            </label>
+          </div>
+          <div class="actions"><button type="submit" class="primary-btn">Assess credit risk <span>→</span></button><button type="reset" id="reset-btn" class="secondary-btn">Reset</button></div>
+        </form>
+      </section>
+
+      <section class="panel results-panel" id="results" aria-live="polite">
+        <div class="panel-heading"><div><p class="eyebrow">ASSESSMENT SUMMARY</p><h2>Your results</h2></div><span class="step">02 / 02</span></div>
+        <div class="empty-state" id="empty-state"><div class="empty-illustration">↗</div><h3>Ready when you are</h3><p>Complete the financial details and select <b>Assess credit risk</b> to see a sample result.</p></div>
+        <div id="result-content" hidden>
+          <div class="score-card"><div><p class="muted-label">Illustrative score index</p><div class="score-line"><strong id="score">72</strong><span>/ 100</span></div><p class="score-caption">Not an official bureau score</p></div><div class="score-ring" id="score-ring"><span id="ring-number">72</span></div></div>
+          <div class="result-grid">
+            <div class="metric"><span class="metric-label">Credit category</span><strong id="category">Good</strong><span class="metric-note">Illustrative estimate</span></div>
+            <div class="metric"><span class="metric-label">Estimated risk</span><strong id="risk" class="risk-low">Low</strong><span class="metric-note">Rule-based demo</span></div>
+          </div>
+          <div class="analysis-box"><h3>What influenced this result?</h3><ul id="reasons"></ul></div>
+          <div class="ratio-row"><div><span>Debt-to-income indicator</span><strong id="ratio">13.3%</strong></div><div class="ratio-track"><span id="ratio-bar"></span></div></div>
+          <button class="secondary-btn full-btn" id="download-btn" type="button">Download assessment summary ↓</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="bottom-grid">
+      <article class="info-card"><div class="info-icon">⌁</div><h3>Understand the indicators</h3><p>Payment history, debt burden, income stability, and credit history can all be relevant to a credit-risk assessment.</p></article>
+      <article class="info-card"><div class="info-icon">▦</div><h3>Machine learning extension</h3><p>For a genuine ML version, train and validate a model on a suitable, lawfully obtained dataset and evaluate it for bias and errors.</p></article>
+      <article class="info-card"><div class="info-icon">◎</div><h3>Responsible use</h3><p>Real lending decisions need validated data, explainability, privacy safeguards, and appropriate human and regulatory oversight.</p></article>
+    </section>
+    <footer><span>CreditLens · Academic project demo</span><span>Static website · GitHub Pages compatible</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
